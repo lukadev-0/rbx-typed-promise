@@ -9,7 +9,7 @@ You can install this package on Wally.
 
 ```toml
 [dependencies]
-Promise = "lukadev-0/typed-promise@4.0.0"
+Promise = "lukadev-0/typed-promise@4.0.1"
 ```
 
 ### wally-package-types
