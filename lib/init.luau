@@ -54,7 +54,7 @@ export type TypedPromise<T...> = {
 }
 
 type Signal<T...> = {
-	Connect: (self: Signal<T...>, T...) -> SignalConnection,
+	Connect: (self: Signal<T...>, callback: (T...) -> ...any) -> SignalConnection,
 }
 
 type SignalConnection = {
