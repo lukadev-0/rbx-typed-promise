@@ -1,0 +1,10 @@
+[package]
+name = "lukadev-0/typed-promise"
+description = "Promises with types"
+version = "4.0.0"
+license = "MIT"
+registry = "https://github.com/UpliftGames/wally-index"
+realm = "shared"
+
+[dependencies]
+Promise = "evaera/promise@4.0.0"
