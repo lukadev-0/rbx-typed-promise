@@ -53,6 +53,15 @@ export type TypedPromise<T...> = {
 	timeout: (self: Promise, seconds: number, rejectionValue: any?) -> Promise,
 }
 
+type Signal<T...> = {
+	Connect: (self: Signal<T...>, T...) -> SignalConnection,
+}
+
+type SignalConnection = {
+	Disconnect: (self: SignalConnection) -> ...any,
+	[any]: any,
+}
+
 return Promise :: {
 	Error: any,
 
@@ -76,7 +85,7 @@ return Promise :: {
 		reducer: (accumulator: TReturn, value: T, index: number) -> TReturn | TypedPromise<TReturn>
 	) -> TypedPromise<TReturn>,
 	fromEvent: <TReturn...>(
-		event: { Connect: ((TReturn...) -> ...any) -> ...any },
+		event: Signal<TReturn...>,
 		predicate: ((TReturn...) -> boolean)?
 	) -> TypedPromise<TReturn...>,
 	is: (object: any) -> boolean,
